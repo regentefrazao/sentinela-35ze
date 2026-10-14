@@ -1119,7 +1119,7 @@ var STATUS = {
    A troca de agentes também pode ser feita no próprio painel
    (modo comando → Pontos → Editar escala), sem mexer no código.
    ================================================================ */
-var MOB_VERSAO = 'BG187-2026-2T-b';   // 2º turno: efetivo do BG nº 187/2026 e distribuição do comando (14/10/2026)   // mude este valor ao colar um novo BG
+var MOB_VERSAO = 'BG187-2026-2T-c';   // 2º turno: efetivo do BG nº 187/2026 e distribuição do comando (14/10/2026)   // mude este valor ao colar um novo BG
 var MOBILIZACAO = [
 'NOVA OLINDA DO NORTE – ZONA 35 – FOLHA 18',
 'BG nº 187/2026 – 2º Turno (locais do BG nº 177/2026 – Memo nº 1127/2026-CPI/PMAM)',
@@ -1141,7 +1141,7 @@ var MOBILIZACAO = [
 '',
 '09 – E.M. Frei Henrique de Coimbra – Com. Vila Nazaré – Rio Curupira',
 '     ST PM Maria da Conceição',
-'     SD PM Victor Diego',
+'     SD PM Fábio Quintino',
 '',
 '10 – E.M. N. Sra. do Perpétuo Socorro – Com. São Sebastião – Rio Curupira',
 '     CB PM Silverstone Ferreira',
@@ -1153,7 +1153,7 @@ var MOBILIZACAO = [
 '',
 '12 – E.M. Paquequer – Com. Paquequer – Rio Madeira (margem direita)',
 '     2º SGT PM Lucicléia Farias',
-'     SD PM Fábio Quintino',
+'     SD PM Victor Diego',
 '',
 '13 – E.M. Espírito Santo – Com. Vila Sião – Rio Curupira',
 '     3º SGT PM Carlos Augusto',
@@ -1330,7 +1330,7 @@ var AGENT_FIXES = {
   'agmuq8cgp7veur3':{fix:'fx-1014-e',ponto:'p15',posto:'Sd',guerra:'Roldão Alves',status:'fora'},   // fora do efetivo do 2º turno (BG 187)
   'cmd_p15_VALDIKMARQUES':{fix:'fx-1003-e',criar:true,ponto:'p15',posto:'3Sgt',guerra:'Valdik Marques',status:'posto',lat:-3.727633,lng:-58.900936},   // nunca entrou no sistema; localização enviada do local 15
   'agmun0trsabg28r':{fix:'fx-1014-d',ponto:'p14',posto:'Sd',guerra:'Maycon Brasil',status:'fora'},   // fora do efetivo do 2º turno (BG 187)
-  'agmumqo94wxyt24':{fix:'fx-1014-a',ponto:'p12',posto:'Sd',guerra:'Fábio Quintino',status:'fora'},   // volta à escala do BG 177: Paquequer (12) com o 3º Sgt Arleyson (14/10/2026)
+  'agmumqo94wxyt24':{fix:'fx-1014-h',ponto:'p09',posto:'Sd',guerra:'Fábio Quintino',status:'fora'},   // 2º turno: local 09 (Vila Nazaré) com a ST Conceição – troca com o Sd Victor Diego (14/10/2026)
   'agmuq8ax94xqw1v':{fix:'fx-1014-g',ponto:'p16',posto:'3Sgt',guerra:'Arleyson Pinheiro',status:'fora'},   // 2º turno: local 16 com o Cb Israel (2º Sgt Lucicléia escolheu o local 12 – opção B)
   'agmumo9ypyl1kbt':{fix:'fx-1014-f',ponto:'p16',posto:'Sd',guerra:'Thiago Farias',status:'fora'},   // fora do efetivo do 2º turno (BG 187)
   'agmumx8clanv1xg':{fix:'fx-1014-c',ponto:'p14',posto:'Cb',guerra:'Daniel Lendel',status:'fora'},   // 2º turno: local 14 com a 3º Sgt Mirna
