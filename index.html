@@ -1119,10 +1119,10 @@ var STATUS = {
    A troca de agentes também pode ser feita no próprio painel
    (modo comando → Pontos → Editar escala), sem mexer no código.
    ================================================================ */
-var MOB_VERSAO = 'BG177-2026-r2';   // r2: escala do 1º turno (1ºPEL/9ªCIPM, 30/09/2026) – locais 09 e 12   // mude este valor ao colar um novo BG
+var MOB_VERSAO = 'BG187-2026-2T-b';   // 2º turno: efetivo do BG nº 187/2026 e distribuição do comando (14/10/2026)   // mude este valor ao colar um novo BG
 var MOBILIZACAO = [
 'NOVA OLINDA DO NORTE – ZONA 35 – FOLHA 18',
-'BG nº 177/2026 – Mapa de Mobilização (Memo nº 1127/2026-CPI/PMAM)',
+'BG nº 187/2026 – 2º Turno (locais do BG nº 177/2026 – Memo nº 1127/2026-CPI/PMAM)',
 '',
 'ZONA URBANA E VILA ABACAXIS',
 '01 – E.M. Maria de Fátima Pacheco – N. Sra. de Fátima – EB',
@@ -1141,20 +1141,19 @@ var MOBILIZACAO = [
 '',
 '09 – E.M. Frei Henrique de Coimbra – Com. Vila Nazaré – Rio Curupira',
 '     ST PM Maria da Conceição',
-'     SD PM Fábio Quintino',
+'     SD PM Victor Diego',
 '',
 '10 – E.M. N. Sra. do Perpétuo Socorro – Com. São Sebastião – Rio Curupira',
-'     CB PM Daniel Lendel',
+'     CB PM Silverstone Ferreira',
 '     SD PM Danilo Ian',
 '',
 '11 – E.M. São Jorge – Com. Vila Borges – Rio Urariá',
 '     2º SGT PM Abelardo Silva',
 '     SD PM Deyvison Medina',
 '',
-'12 – E.M. Paquequer – Com. Paquequer (Sd José Antônio 16h às 09h · Cb Elcio 09h às 18h) – Rio Madeira (margem direita)',
-'     3º SGT PM Arleyson Pinheiro',
-'     SD PM José Antônio',
-'     CB PM Elcio Castro',
+'12 – E.M. Paquequer – Com. Paquequer – Rio Madeira (margem direita)',
+'     2º SGT PM Lucicléia Farias',
+'     SD PM Fábio Quintino',
 '',
 '13 – E.M. Espírito Santo – Com. Vila Sião – Rio Curupira',
 '     3º SGT PM Carlos Augusto',
@@ -1162,17 +1161,17 @@ var MOBILIZACAO = [
 '',
 '14 – E.M. São Francisco – Com. São Francisco de Assis – Rio Urariá',
 '     3º SGT PM Mirna Nazaré',
-'     SD PM Maycon Brasil',
+'     CB PM Daniel Lendel',
 '',
 'ZONA RURAL INDÍGENA – 2 PMs POR LOCAL',
 '',
 '15 – E.M. Presidente Médici – Com. Senhor Paz (Flamenguinho) – Rio Curupira',
 '     3º SGT PM Valdik Marques',
-'     SD PM Roldão Alves',
+'     CB PM Huguslávio Silva',
 '',
 '16 – E.M. São José – Aldeia São João do Cacoal – Rio Paracuni',
-'     CB PM Huguslávio Silva',
-'     SD PM Thiago Farias'
+'     3º SGT PM Arleyson Pinheiro',
+'     CB PM Israel Santos'
 ].join('\n');
 
 /* Coordenadas por número do local: [lat, lng, precisão]
@@ -1325,15 +1324,16 @@ function loadLocal(){
 }
 /* Correções de efetivo determinadas pelo comando (aplicadas uma única vez) */
 var AGENT_FIXES = {
-  'agmuq4ko42hmop1':{fix:'fx-1003-a',ponto:'p16',posto:'Cb',guerra:'Huguslávio Silva'},   // estava em 08, está no local 16
+  'agmuq4ko42hmop1':{fix:'fx-1014-b',ponto:'p15',posto:'Cb',guerra:'Huguslávio Silva',status:'fora'},   // 2º turno: local 15 com o 3º Sgt Valdik
   'agmuq8f9fglf60g':{fix:'fx-1003-b',ponto:'p09',posto:'ST',guerra:'Maria da Conceição'},   // estava em 08, está no local 09 (Vila Nazaré)
   'agmumkupqav13as':{fix:'fx-1003-c',ponto:'p11',posto:'2Sgt',guerra:'Abelardo Silva',status:'posto'},   // chegou à Vila Borges (local 11)
-  'agmuq8cgp7veur3':{fix:'fx-1003-d',ponto:'p15',posto:'Sd',guerra:'Roldão Alves',status:'posto',lat:-3.727633,lng:-58.900936},   // localização enviada do local 15
+  'agmuq8cgp7veur3':{fix:'fx-1014-e',ponto:'p15',posto:'Sd',guerra:'Roldão Alves',status:'fora'},   // fora do efetivo do 2º turno (BG 187)
   'cmd_p15_VALDIKMARQUES':{fix:'fx-1003-e',criar:true,ponto:'p15',posto:'3Sgt',guerra:'Valdik Marques',status:'posto',lat:-3.727633,lng:-58.900936},   // nunca entrou no sistema; localização enviada do local 15
-  'agmun0trsabg28r':{fix:'fx-1004-a',ponto:'p14',posto:'Sd',guerra:'Maycon Brasil',status:'posto'},   // entrou no sistema e perdeu o sinal: considerado em posto (04/10/2026)
-  'agmumqo94wxyt24':{fix:'fx-1004-d2',ponto:'p09',posto:'Sd',guerra:'Fábio Quintino',status:'posto',lat:-3.6296332,lng:-58.8024358,gps:true},   // escala do 1º turno: Vila Nazaré (09); posição = GPS dele de 03/10
-  'agmuq8ax94xqw1v':{fix:'fx-1004-c',ponto:'p12',posto:'3Sgt',guerra:'Arleyson Pinheiro',status:'posto',lat:-3.751959,lng:-58.9695309},   // confirmado pelo comando no local 12 (04/10/2026)
-  'agmumx8clanv1xg':{fix:'fx-1004-e',ponto:'p10',posto:'Cb',guerra:'Daniel Lendel'},   // registro 'Carlos Fábio' com CI 23256 = CI do CB Daniel Lendel; entrou na sede em 01/10 e saiu
+  'agmun0trsabg28r':{fix:'fx-1014-d',ponto:'p14',posto:'Sd',guerra:'Maycon Brasil',status:'fora'},   // fora do efetivo do 2º turno (BG 187)
+  'agmumqo94wxyt24':{fix:'fx-1014-a',ponto:'p12',posto:'Sd',guerra:'Fábio Quintino',status:'fora'},   // volta à escala do BG 177: Paquequer (12) com o 3º Sgt Arleyson (14/10/2026)
+  'agmuq8ax94xqw1v':{fix:'fx-1014-g',ponto:'p16',posto:'3Sgt',guerra:'Arleyson Pinheiro',status:'fora'},   // 2º turno: local 16 com o Cb Israel (2º Sgt Lucicléia escolheu o local 12 – opção B)
+  'agmumo9ypyl1kbt':{fix:'fx-1014-f',ponto:'p16',posto:'Sd',guerra:'Thiago Farias',status:'fora'},   // fora do efetivo do 2º turno (BG 187)
+  'agmumx8clanv1xg':{fix:'fx-1014-c',ponto:'p14',posto:'Cb',guerra:'Daniel Lendel',status:'fora'},   // 2º turno: local 14 com a 3º Sgt Mirna
   'agmuq884buaqmgj':{fix:'fx-1004-f',status:'fora',ponto:'p08',posto:'ST',guerra:'Carlos Fábio'},   // duplicado do ST Carlos Fábio (sede, 01/10)
   'agmumyeqdspr6sk':{fix:'fx-1004-g',status:'fora',ponto:'p_ze35',posto:'1Ten',guerra:'Ageu'}   // duplicado do 1º Ten Ageu (29/09)
 };
