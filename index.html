@@ -1119,7 +1119,7 @@ var STATUS = {
    A troca de agentes também pode ser feita no próprio painel
    (modo comando → Pontos → Editar escala), sem mexer no código.
    ================================================================ */
-var MOB_VERSAO = 'BG187-2026-2T-c';   // 2º turno: efetivo do BG nº 187/2026 e distribuição do comando (14/10/2026)   // mude este valor ao colar um novo BG
+var MOB_VERSAO = 'BG187-2026-2T-f';   // 2º turno: efetivo do BG nº 187/2026 e distribuição do comando (14/10/2026)   // mude este valor ao colar um novo BG
 var MOBILIZACAO = [
 'NOVA OLINDA DO NORTE – ZONA 35 – FOLHA 18',
 'BG nº 187/2026 – 2º Turno (locais do BG nº 177/2026 – Memo nº 1127/2026-CPI/PMAM)',
@@ -1144,7 +1144,7 @@ var MOBILIZACAO = [
 '     SD PM Fábio Quintino',
 '',
 '10 – E.M. N. Sra. do Perpétuo Socorro – Com. São Sebastião – Rio Curupira',
-'     CB PM Silverstone Ferreira',
+'     CB PM Daniel Lendel',
 '     SD PM Danilo Ian',
 '',
 '11 – E.M. São Jorge – Com. Vila Borges – Rio Urariá',
@@ -1153,7 +1153,7 @@ var MOBILIZACAO = [
 '',
 '12 – E.M. Paquequer – Com. Paquequer – Rio Madeira (margem direita)',
 '     2º SGT PM Lucicléia Farias',
-'     SD PM Victor Diego',
+'     3º SGT PM Arleyson Pinheiro',
 '',
 '13 – E.M. Espírito Santo – Com. Vila Sião – Rio Curupira',
 '     3º SGT PM Carlos Augusto',
@@ -1161,7 +1161,7 @@ var MOBILIZACAO = [
 '',
 '14 – E.M. São Francisco – Com. São Francisco de Assis – Rio Urariá',
 '     3º SGT PM Mirna Nazaré',
-'     CB PM Daniel Lendel',
+'     SD PM Victor Diego',
 '',
 'ZONA RURAL INDÍGENA – 2 PMs POR LOCAL',
 '',
@@ -1170,7 +1170,7 @@ var MOBILIZACAO = [
 '     CB PM Huguslávio Silva',
 '',
 '16 – E.M. São José – Aldeia São João do Cacoal – Rio Paracuni',
-'     3º SGT PM Arleyson Pinheiro',
+'     CB PM Silverstone Ferreira',
 '     CB PM Israel Santos'
 ].join('\n');
 
@@ -1324,16 +1324,16 @@ function loadLocal(){
 }
 /* Correções de efetivo determinadas pelo comando (aplicadas uma única vez) */
 var AGENT_FIXES = {
-  'agmuq4ko42hmop1':{fix:'fx-1014-b',ponto:'p15',posto:'Cb',guerra:'Huguslávio Silva',status:'fora'},   // 2º turno: local 15 com o 3º Sgt Valdik
+  'agmuq4ko42hmop1':{fix:'fx-1014-l',ponto:'p15',posto:'Cb',guerra:'Huguslávio Silva',status:'fora'},   // 2º turno: local 15 com o 3º Sgt Valdik
   'agmuq8f9fglf60g':{fix:'fx-1003-b',ponto:'p09',posto:'ST',guerra:'Maria da Conceição'},   // estava em 08, está no local 09 (Vila Nazaré)
   'agmumkupqav13as':{fix:'fx-1003-c',ponto:'p11',posto:'2Sgt',guerra:'Abelardo Silva',status:'posto'},   // chegou à Vila Borges (local 11)
   'agmuq8cgp7veur3':{fix:'fx-1014-e',ponto:'p15',posto:'Sd',guerra:'Roldão Alves',status:'fora'},   // fora do efetivo do 2º turno (BG 187)
   'cmd_p15_VALDIKMARQUES':{fix:'fx-1003-e',criar:true,ponto:'p15',posto:'3Sgt',guerra:'Valdik Marques',status:'posto',lat:-3.727633,lng:-58.900936},   // nunca entrou no sistema; localização enviada do local 15
   'agmun0trsabg28r':{fix:'fx-1014-d',ponto:'p14',posto:'Sd',guerra:'Maycon Brasil',status:'fora'},   // fora do efetivo do 2º turno (BG 187)
   'agmumqo94wxyt24':{fix:'fx-1014-h',ponto:'p09',posto:'Sd',guerra:'Fábio Quintino',status:'fora'},   // 2º turno: local 09 (Vila Nazaré) com a ST Conceição – troca com o Sd Victor Diego (14/10/2026)
-  'agmuq8ax94xqw1v':{fix:'fx-1014-g',ponto:'p16',posto:'3Sgt',guerra:'Arleyson Pinheiro',status:'fora'},   // 2º turno: local 16 com o Cb Israel (2º Sgt Lucicléia escolheu o local 12 – opção B)
+  'agmuq8ax94xqw1v':{fix:'fx-1014-j',ponto:'p12',posto:'3Sgt',guerra:'Arleyson Pinheiro',status:'fora'},   // 2º turno (planilha do PEL): local 12 com a 2º Sgt Lucicléia
   'agmumo9ypyl1kbt':{fix:'fx-1014-f',ponto:'p16',posto:'Sd',guerra:'Thiago Farias',status:'fora'},   // fora do efetivo do 2º turno (BG 187)
-  'agmumx8clanv1xg':{fix:'fx-1014-c',ponto:'p14',posto:'Cb',guerra:'Daniel Lendel',status:'fora'},   // 2º turno: local 14 com a 3º Sgt Mirna
+  'agmumx8clanv1xg':{fix:'fx-1014-i',ponto:'p10',posto:'Cb',guerra:'Daniel Lendel',status:'fora'},   // 2º turno: volta ao local 10 (São Sebastião), como no 1º turno, com o Sd Danilo
   'agmuq884buaqmgj':{fix:'fx-1004-f',status:'fora',ponto:'p08',posto:'ST',guerra:'Carlos Fábio'},   // duplicado do ST Carlos Fábio (sede, 01/10)
   'agmumyeqdspr6sk':{fix:'fx-1004-g',status:'fora',ponto:'p_ze35',posto:'1Ten',guerra:'Ageu'}   // duplicado do 1º Ten Ageu (29/09)
 };
